@@ -48,3 +48,31 @@ aitocoder-deepin/
 
 5. (USER) In a linux terminal, run the generated install script  
 `install-aitocoder`
+
+## MacOS Packaging (arm64) **(BETA)**
+
+**(TO BE TESTED)**  
+1. Create the following folder structure
+
+<pre>
+aitocoder-macos/
+    └── usr/
+        ├── local/
+        │   ├── bin/
+        │   │   └── aitocoder.chat            # (launcher script)
+        │   └── share/
+        │       └── aitocoder/
+        │           ├── aitocoder_macos.sh    # (your installer script)
+        │           └── aitocoder_macos.tar.gz # (your packed conda env)
+</pre>
+
+2. Build the component package using pkgbuild  
+`pkgbuild --root ./aitocoder-macos/usr --identifier com.aitocoder.cli --version 1.0.0 --install-location / aitocoder-cli.pkg`
+
+3. The .pkg file is ready to distribute
+
+4. (USER) On macOS, install the package by double-clicking the .pkg file, or run:  
+`sudo installer -pkg aitocoder-cli.pkg -target /`
+
+5. (USER) After installation, run the launcher script:  
+`aitocoder.chat`
