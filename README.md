@@ -26,6 +26,7 @@ OR
 
 1. Create the following folder structure
 
+<pre> ```text
 aitocoder-deepin/
     ├── DEBIAN/
     │   └── control
@@ -36,6 +37,7 @@ aitocoder-deepin/
             └── aitocoder/
                 ├── aitocoder_linux.sh      # (your installer script)
                 └── aitocoder_linux.tar.gz  # (your packed conda env)
+``` </pre>
 
 2. Run packaging command that creates aitocoder-deepin.deb
 `dpkg-deb --build aitocoder-deepin`
